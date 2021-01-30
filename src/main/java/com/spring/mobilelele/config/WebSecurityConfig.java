@@ -6,6 +6,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import static com.spring.mobilelele.common.GlobalConstants.*;
+
     @Configuration
     @EnableWebSecurity
     public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -31,26 +33,24 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
         @Override
         protected void configure(HttpSecurity http) throws Exception {
 
-            String loginPage = "/authentication/login";
-            String logoutPage = "/logout";
 
             http.
                     authorizeRequests()
                     .antMatchers("/static/**", "/css/**", "/img/**","/js/**").permitAll()
-                    .antMatchers("/authentication/**").anonymous()
+                    .antMatchers(LOGIN_URL,REGISTER_URL).anonymous()
                     .antMatchers("/home").authenticated()
                     .antMatchers("/").permitAll()
                     .anyRequest()
                     .authenticated()
                     .and().csrf().disable()
                     .formLogin()
-                    .loginPage(loginPage)
+                    .loginPage(LOGIN_URL)
                     .failureUrl("/login?error=true")
                     .defaultSuccessUrl("/home")
                     .usernameParameter("username")
                     .passwordParameter("password")
                     .and().logout()
-                    .logoutRequestMatcher(new AntPathRequestMatcher(logoutPage))
-                    .logoutSuccessUrl(loginPage).and().exceptionHandling();
+                    .logoutRequestMatcher(new AntPathRequestMatcher(LOGOUT_URL))
+                    .logoutSuccessUrl(LOGIN_URL).and().exceptionHandling();
         }
     }
