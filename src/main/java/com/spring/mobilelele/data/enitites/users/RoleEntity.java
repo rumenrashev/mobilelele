@@ -1,6 +1,7 @@
 package com.spring.mobilelele.data.enitites.users;
 
 import com.spring.mobilelele.data.enitites.base.BaseEntity;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -8,7 +9,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "roles")
-public class RoleEntity extends BaseEntity {
+public class RoleEntity extends BaseEntity implements GrantedAuthority {
 
     private String authority;
 

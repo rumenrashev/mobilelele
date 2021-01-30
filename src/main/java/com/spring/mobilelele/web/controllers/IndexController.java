@@ -11,7 +11,8 @@ import static com.spring.mobilelele.common.GlobalConstants.INDEX_URL;
 public class IndexController extends BaseController {
 
     @GetMapping(INDEX_URL)
-    public ModelAndView index(){
-        return super.view("index");
+    public String index(){
+        return "index";
     }
+
 }

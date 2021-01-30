@@ -10,7 +10,6 @@ import com.spring.mobilelele.data.enums.EngineEnum;
 import com.spring.mobilelele.data.enums.RoleNameEnum;
 import com.spring.mobilelele.data.enums.TransmissionEnum;
 import com.spring.mobilelele.data.repsotories.*;
-import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +17,7 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.*;
 
-@Component
-@AllArgsConstructor
+//@Component
 public class DataInitializer implements CommandLineRunner {
 
     private final RoleRepository roleRepository;
@@ -27,6 +25,14 @@ public class DataInitializer implements CommandLineRunner {
     private final BrandRepository brandRepository;
     private final ModelRepository modelRepository;
     private final OfferRepository offerRepository;
+
+    public DataInitializer(RoleRepository roleRepository, UserRepository userRepository, BrandRepository brandRepository, ModelRepository modelRepository, OfferRepository offerRepository) {
+        this.roleRepository = roleRepository;
+        this.userRepository = userRepository;
+        this.brandRepository = brandRepository;
+        this.modelRepository = modelRepository;
+        this.offerRepository = offerRepository;
+    }
 
     @Override
     public void run(String... args) throws Exception {
