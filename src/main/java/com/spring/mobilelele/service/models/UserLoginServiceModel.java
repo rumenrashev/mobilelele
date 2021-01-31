@@ -44,7 +44,6 @@ public class UserLoginServiceModel implements UserDetails {
         return this;
     }
 
-
     @Override
     public Set<RoleEntity> getAuthorities() {
         return authorities;

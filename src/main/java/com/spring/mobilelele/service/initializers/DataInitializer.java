@@ -11,12 +11,13 @@ import com.spring.mobilelele.data.enums.RoleNameEnum;
 import com.spring.mobilelele.data.enums.TransmissionEnum;
 import com.spring.mobilelele.data.repsotories.*;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.*;
 
-//@Component
+@Component
 public class DataInitializer implements CommandLineRunner {
 
     private final RoleRepository roleRepository;
@@ -36,17 +37,17 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         this.seedRolesToDB();
-        List<RoleEntity> adminRoles = this.roleRepository.findAll();
-        RoleEntity userRole = this.roleRepository.findByAuthority(RoleNameEnum.USER_ROLE.name())
-                .orElseThrow(Exception::new);
-        UserEntity admin = this.createUser("admin", "Asen",
-                "Asenov", new LinkedHashSet<>(adminRoles));
-        UserEntity user = this.createUser("user", "Boris",
-                "Borisov", Set.of(userRole));
-        BrandEntity brand = this.createBrand("Mercedes-Benz");
-        ModelEntity model = this.createModel("E-class", CategoryEnum.CAR, 1970, null, brand);
-        OfferEntity offer = createOffer("Just a car", EngineEnum.DIESEL, 100000, new BigDecimal(10000)
-                , TransmissionEnum.AUTOMATIC, 2000, model, user);
+//        List<RoleEntity> adminRoles = this.roleRepository.findAll();
+//        RoleEntity userRole = this.roleRepository.findByAuthority(RoleNameEnum.USER_ROLE.name())
+//                .orElseThrow(Exception::new);
+//        UserEntity admin = this.createUser("admin", "Asen",
+//                "Asenov", new LinkedHashSet<>(adminRoles));
+//        UserEntity user = this.createUser("user", "Boris",
+//                "Borisov", Set.of(userRole));
+//        BrandEntity brand = this.createBrand("Mercedes-Benz");
+//        ModelEntity model = this.createModel("E-class", CategoryEnum.CAR, 1970, null, brand);
+//        OfferEntity offer = createOffer("Just a car", EngineEnum.DIESEL, 100000, new BigDecimal(10000)
+//                , TransmissionEnum.AUTOMATIC, 2000, model, user);
 
 
     }
