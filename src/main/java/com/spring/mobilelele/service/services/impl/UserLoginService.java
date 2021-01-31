@@ -1,4 +1,4 @@
-package com.spring.mobilelele.service.services;
+package com.spring.mobilelele.service.services.impl;
 
 import com.spring.mobilelele.data.enitites.UserEntity;
 import com.spring.mobilelele.data.repsotories.RoleRepository;

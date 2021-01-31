@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+
+<body>
+
+<div>
+    <th:block th:include="~{/fragments/navigation}"></th:block>
+</div>
+
+
+<div class="container">
+    <h2 class="text-center text-white">Add brand</h2>
+    <form method="POST"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="form-group">
+            <label for="brand" class="text-white font-weight-bold">Brand</label>
+            <input value="brand" id="brand" name="name" type="text" min="2" max="50"
+                   class="form-control"
+                   placeholder="Brand..."/>
+        </div>
+        <p th:if="${alreadyExists} != null" th:text="'Brand ' + ${brandName} + ' alredy exists!'" class="errors alert alert-danger">
+            Brand already exists
+        </p>
+        <p  th:if="${isSuccessfully}" th:text="'Successfully added brand : ' + ${brandName}" class="alert alert-success" role="alert">
+            This is a success alert—check it out!
+        </p>
+
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="button-holder d-flex">
+                    <input type="submit" class="btn btn-info btn-lg" value="Submit Brand"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <footer> </footer>
+</div>
+
+</body>
+</html>

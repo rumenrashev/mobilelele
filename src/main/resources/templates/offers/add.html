@@ -44,9 +44,8 @@
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
                 <select id="engine" class="form-control">
-                    <option value="">- Select engine type -</option>
-                    <option>
-                        Engine type
+                    <option th:each="engine : ${T(com.spring.mobilelele.data.enums.EngineEnum).values()}"
+                            th:value="${engine}" th:text="${engine}">
                     </option>
                 </select>
                 <p class="errors alert alert-danger">
@@ -56,9 +55,12 @@
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="transmission">Transmission</label>
                 <select id="transmission" class="form-control">
-                    <option value="">- Select transmission type -</option>
-                    <option> Transmission type
+                    <option th:each="transmission : ${T(com.spring.mobilelele.data.enums.TransmissionEnum).values()}"
+                            th:value="${transmission}" th:text="${transmission}">
                     </option>
+<!--                    <option value="">- Select transmission type -</option>-->
+<!--                    <option> Transmission type-->
+<!--                    </option>-->
                 </select>
                 <p class="errors alert alert-danger">
                     Transmission type is required.

@@ -1,4 +1,4 @@
-package com.spring.mobilelele.service.models;
+package com.spring.mobilelele.web.models.bindings;
 
 import org.hibernate.validator.constraints.Length;
 

@@ -2,7 +2,7 @@ package com.spring.mobilelele.web.controllers;
 
 import com.spring.mobilelele.service.models.UserRegisterServiceModel;
 import com.spring.mobilelele.service.services.UserRegisterService;
-import com.spring.mobilelele.service.models.UserRegisterBindingModel;
+import com.spring.mobilelele.web.models.bindings.UserRegisterBindingModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
