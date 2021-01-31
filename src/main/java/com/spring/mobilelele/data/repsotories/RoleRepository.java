@@ -1,6 +1,6 @@
 package com.spring.mobilelele.data.repsotories;
 
-import com.spring.mobilelele.data.enitites.users.RoleEntity;
+import com.spring.mobilelele.data.enitites.RoleEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

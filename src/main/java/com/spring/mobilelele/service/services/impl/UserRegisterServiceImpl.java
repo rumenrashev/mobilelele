@@ -1,7 +1,7 @@
 package com.spring.mobilelele.service.services.impl;
 
-import com.spring.mobilelele.data.enitites.users.RoleEntity;
-import com.spring.mobilelele.data.enitites.users.UserEntity;
+import com.spring.mobilelele.data.enitites.RoleEntity;
+import com.spring.mobilelele.data.enitites.UserEntity;
 import com.spring.mobilelele.data.repsotories.RoleRepository;
 import com.spring.mobilelele.data.repsotories.UserRepository;
 import com.spring.mobilelele.service.models.UserRegisterServiceModel;

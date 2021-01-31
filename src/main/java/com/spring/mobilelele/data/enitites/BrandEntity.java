@@ -1,6 +1,4 @@
-package com.spring.mobilelele.data.enitites.cars;
-
-import com.spring.mobilelele.data.enitites.base.BaseEntity;
+package com.spring.mobilelele.data.enitites;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

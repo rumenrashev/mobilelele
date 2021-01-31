@@ -1,8 +1,7 @@
-package com.spring.mobilelele.web.controllers.users;
+package com.spring.mobilelele.web.controllers;
 
 import com.spring.mobilelele.service.models.UserRegisterServiceModel;
 import com.spring.mobilelele.service.services.UserRegisterService;
-import com.spring.mobilelele.web.controllers.base.BaseController;
 import com.spring.mobilelele.service.models.UserRegisterBindingModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
-import static com.spring.mobilelele.common.GlobalConstants.LOGIN_URL;
-import static com.spring.mobilelele.common.GlobalConstants.REGISTER_URL;
+import static com.spring.mobilelele.common.GlobalConstants.*;
 
 @Controller
 public class UserRegisterController extends BaseController {
@@ -31,24 +29,24 @@ public class UserRegisterController extends BaseController {
         this.userRegisterService = userRegisterService;
     }
 
-    @GetMapping(REGISTER_URL)
+    @GetMapping(REGISTER_PATH)
     public String registerGet(Model model) {
         if (model.getAttribute("user") == null) {
             model.addAttribute("user", new UserRegisterBindingModel());
         }
-        return REGISTER_URL;
+        return REGISTER_PATH;
     }
 
-    @PostMapping(REGISTER_URL)
+    @PostMapping(REGISTER_PATH)
     public String registerPost(@Valid @ModelAttribute("user") UserRegisterBindingModel user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()){
             redirectAttributes.addFlashAttribute("user",user);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.user",bindingResult);
-            return redirect(REGISTER_URL);
+            return redirect(REGISTER_PATH);
         }
         UserRegisterServiceModel userRegisterServiceModel =
                 this.modelMapper.map(user, UserRegisterServiceModel.class);
         this.userRegisterService.registerUser(userRegisterServiceModel);
-        return redirect(LOGIN_URL);
+        return redirect(LOGIN_PATH);
     }
 }

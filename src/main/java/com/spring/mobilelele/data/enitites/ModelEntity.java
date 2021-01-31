@@ -1,7 +1,5 @@
-package com.spring.mobilelele.data.enitites.cars;
+package com.spring.mobilelele.data.enitites;
 
-import com.spring.mobilelele.data.enitites.base.BaseEntity;
-import com.spring.mobilelele.data.enitites.base.BaseEntityWithImage;
 import com.spring.mobilelele.data.enums.CategoryEnum;
 
 import javax.persistence.*;

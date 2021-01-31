@@ -1,17 +1,16 @@
 package com.spring.mobilelele.service.initializers;
 
-import com.spring.mobilelele.data.enitites.cars.BrandEntity;
-import com.spring.mobilelele.data.enitites.cars.ModelEntity;
-import com.spring.mobilelele.data.enitites.offers.OfferEntity;
-import com.spring.mobilelele.data.enitites.users.RoleEntity;
-import com.spring.mobilelele.data.enitites.users.UserEntity;
+import com.spring.mobilelele.data.enitites.BrandEntity;
+import com.spring.mobilelele.data.enitites.ModelEntity;
+import com.spring.mobilelele.data.enitites.OfferEntity;
+import com.spring.mobilelele.data.enitites.RoleEntity;
+import com.spring.mobilelele.data.enitites.UserEntity;
 import com.spring.mobilelele.data.enums.CategoryEnum;
 import com.spring.mobilelele.data.enums.EngineEnum;
 import com.spring.mobilelele.data.enums.RoleNameEnum;
 import com.spring.mobilelele.data.enums.TransmissionEnum;
 import com.spring.mobilelele.data.repsotories.*;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.Instant;

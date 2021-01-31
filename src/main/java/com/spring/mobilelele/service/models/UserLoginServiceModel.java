@@ -1,6 +1,6 @@
 package com.spring.mobilelele.service.models;
 
-import com.spring.mobilelele.data.enitites.users.RoleEntity;
+import com.spring.mobilelele.data.enitites.RoleEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Set;

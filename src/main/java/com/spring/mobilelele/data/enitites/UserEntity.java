@@ -1,7 +1,4 @@
-package com.spring.mobilelele.data.enitites.users;
-
-import com.spring.mobilelele.data.enitites.base.BaseEntity;
-import com.spring.mobilelele.data.enitites.base.BaseEntityWithImage;
+package com.spring.mobilelele.data.enitites;
 
 import javax.persistence.*;
 import java.util.Objects;

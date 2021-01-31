@@ -1,6 +1,5 @@
-package com.spring.mobilelele.data.enitites.users;
+package com.spring.mobilelele.data.enitites;
 
-import com.spring.mobilelele.data.enitites.base.BaseEntity;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Entity;

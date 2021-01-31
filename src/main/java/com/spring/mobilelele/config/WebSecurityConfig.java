@@ -21,7 +21,8 @@ import static com.spring.mobilelele.common.GlobalConstants.*;
         private final UserDetailsService userDetailsService;
 
         @Autowired
-        public WebSecurityConfig(BCryptPasswordEncoder bCryptPasswordEncoder, @Qualifier("userLoginService") UserDetailsService userDetailsService) {
+        public WebSecurityConfig(BCryptPasswordEncoder bCryptPasswordEncoder,
+                                 @Qualifier("userLoginService") UserDetailsService userDetailsService) {
             this.bCryptPasswordEncoder = bCryptPasswordEncoder;
             this.userDetailsService = userDetailsService;
         }
@@ -41,19 +42,19 @@ import static com.spring.mobilelele.common.GlobalConstants.*;
             http.
                     authorizeRequests()
                     .antMatchers("/static/**", "/css/**", "/img/**","/js/**").permitAll()
-                    .antMatchers(LOGIN_URL,REGISTER_URL).anonymous()
-                    .antMatchers("/").permitAll()
+                    .antMatchers(LOGIN_PATH,LOGIN_ERROR_PATH,REGISTER_PATH).anonymous()
+                    .antMatchers(INDEX_PATH).permitAll()
                     .anyRequest()
                     .authenticated()
                     .and().csrf().disable()
                     .formLogin()
-                    .loginPage(LOGIN_URL)
-                    .failureUrl("/login?error=true")
+                    .loginPage(LOGIN_PATH)
+                    .failureUrl(LOGIN_ERROR_PATH)
                     .defaultSuccessUrl("/")
                     .usernameParameter("username")
                     .passwordParameter("password")
                     .and().logout()
-                    .logoutRequestMatcher(new AntPathRequestMatcher(LOGOUT_URL))
-                    .logoutSuccessUrl(LOGIN_URL).and().exceptionHandling();
+                    .logoutRequestMatcher(new AntPathRequestMatcher(LOGOUT_PATH))
+                    .logoutSuccessUrl(LOGIN_PATH).and().exceptionHandling();
         }
     }

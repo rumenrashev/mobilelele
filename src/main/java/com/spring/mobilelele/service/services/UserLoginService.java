@@ -1,6 +1,6 @@
 package com.spring.mobilelele.service.services;
 
-import com.spring.mobilelele.data.enitites.users.UserEntity;
+import com.spring.mobilelele.data.enitites.UserEntity;
 import com.spring.mobilelele.data.repsotories.UserRepository;
 import com.spring.mobilelele.service.models.UserLoginServiceModel;
 import org.modelmapper.ModelMapper;

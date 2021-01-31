@@ -1,4 +1,4 @@
-package com.spring.mobilelele.data.enitites.base;
+package com.spring.mobilelele.data.enitites;
 
 import javax.persistence.*;
 import java.time.Instant;

@@ -1,4 +1,4 @@
-package com.spring.mobilelele.web.controllers.base;
+package com.spring.mobilelele.web.controllers;
 
 public abstract class BaseController {
 
